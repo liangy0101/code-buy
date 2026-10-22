@@ -1,0 +1,339 @@
+<!--
+ * @Author: zhanghl
+ * @Date: 2026-10-22 20:45:34
+ * @LastEditors: zhanghl
+ * @LastEditTime: 2026-10-22 21:10:16
+ * @Description: JsonMorph Pro 官网购买页
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsonMorph Pro - 一站式 JSON 校验、格式化、压缩与代码生成插件</title>
+    <meta name="description"
+        content="JsonMorph Pro 是一站式 JSON 工具箱：校验、格式化、压缩，并一键生成 JavaScript、TypeScript、Go、Java、C#、C++、Rust、Dart、Kotlin、Swift 等多语言代码与类型定义。">
+    <meta name="theme-color" content="#0d1117">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --primary: #58a6ff;
+            --border: #30363d;
+            --accent: #238636;
+            --accent-hover: #2ea043;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .header .platforms {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .pricing-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .pricing-card h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .check {
+            color: #3fb950;
+            font-size: 1.2rem;
+        }
+
+        .cross {
+            color: #f85149;
+            font-size: 1.2rem;
+        }
+
+        .buy-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .buy-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            min-width: 220px;
+        }
+
+        .btn:hover {
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background-color: rgba(88, 166, 255, 0.1);
+        }
+
+        .price-note {
+            margin-top: 14px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .free-entry {
+            margin-top: 18px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <h1>JsonMorph Pro</h1>
+            <p>一站式 JSON 工具箱：校验、格式化、压缩、多语言代码与类型定义生成，并持续扩展更多 JSON 相关能力。</p>
+            <p class="platforms">当前支持：VS Code 插件 · 更多平台持续规划中</p>
+        </header>
+
+        <main>
+            <section class="pricing-card">
+                <h2>版本功能对比</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">功能特性</th>
+                                <th scope="col" class="text-center">免费版</th>
+                                <th scope="col" class="text-center">Pro 版</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>JSON 格式化 / 压缩 / 校验</td>
+                                <td class="text-center check" aria-label="支持">✔</td>
+                                <td class="text-center check" aria-label="支持">✔</td>
+                            </tr>
+                            <tr>
+                                <td>转换为 JavaScript / TypeScript</td>
+                                <td class="text-center check" aria-label="支持">✔</td>
+                                <td class="text-center check" aria-label="支持">✔</td>
+                            </tr>
+                            <tr>
+                                <td>转换为 Go / Java / C# / C++</td>
+                                <td class="text-center cross" aria-label="不支持">✖</td>
+                                <td class="text-center check" aria-label="支持">✔</td>
+                            </tr>
+                            <tr>
+                                <td>转换为 Rust / Dart / Kotlin / Swift</td>
+                                <td class="text-center cross" aria-label="不支持">✖</td>
+                                <td class="text-center check" aria-label="支持">✔</td>
+                            </tr>
+                            <tr>
+                                <td>Pro 版持续获得后续新增语言与高级功能更新（具体以更新日志为准）</td>
+                                <td class="text-center cross" aria-label="不支持">✖</td>
+                                <td class="text-center check" aria-label="支持">✔</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="buy-section">
+                    <h3 class="buy-title">立即解锁 Pro 版（一次购买，终身授权）</h3>
+                    <div class="btn-group">
+                        <!-- 【TODO】替换为你的 Creem 支付链接，并确认 Creem 实际支持的支付方式 -->
+                        <a href="https://creem.io/pay/your-link-here" class="btn btn-primary" target="_blank"
+                            rel="noopener noreferrer">
+                            🇨🇳 支付宝 / 微信支付
+                        </a>
+
+                        <!-- 【TODO】替换为你的 Paddle 或其他海外支付链接，并确认实际支持的支付方式 -->
+                        <a href="https://your-paddle-link.com" class="btn btn-secondary" target="_blank"
+                            rel="noopener noreferrer">
+                            💳 国际信用卡 / PayPal
+                        </a>
+                    </div>
+                    <p class="price-note">价格与税费以支付页面为准。本 License 当前适用于 VS Code 插件，购买前请确认您使用 VS Code。</p>
+                    <!-- 【TODO】替换为 VS Code Marketplace 插件页面链接 -->
+                    <p class="free-entry">还没有安装插件？<a
+                            href="https://marketplace.visualstudio.com/items?itemName=你的发布者ID.你的插件ID" target="_blank"
+                            rel="noopener noreferrer">前往 VS Code Marketplace 免费安装 →</a></p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-note">
+            <p>支付成功后，系统会自动将 License Key 发送至您的邮箱。</p>
+            <p>如有任何问题，请通过 <a href="mailto:598292558@qq.com">598292558@qq.com</a> 联系我们。</p>
+
+            <div class="footer-links">
+                <a href="privacy.html">隐私政策 (Privacy Policy)</a> |
+                <a href="terms.html">服务条款 (Terms of Service)</a> |
+                <a href="refund.html">退款政策 (Refund Policy)</a>
+            </div>
+
+            <p style="margin-top: 15px;">&copy; 2026 JsonMorph Pro. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

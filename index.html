@@ -2,8 +2,8 @@
  * @Author: zhanghl
  * @Date: 2026-10-22 20:45:34
  * @LastEditors: zhanghl
- * @LastEditTime: 2026-10-22 21:30:54
- * @Description: JsonMorph Pro 官网购买页 (内测阶段)
+ * @LastEditTime: 2026-10-22 21:38:56
+ * @Description: JsonMorph Pro 官网购买页
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -129,8 +129,6 @@
         .buy-section {
             text-align: center;
             margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px dashed var(--border);
         }
 
         .buy-title {
@@ -138,6 +136,13 @@
             margin-bottom: 15px;
             color: #ffffff;
             font-weight: 600;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -152,7 +157,7 @@
             transition: all 0.2s ease;
             cursor: pointer;
             border: 1px solid transparent;
-            min-width: 280px;
+            min-width: 220px;
         }
 
         .btn:hover {
@@ -160,12 +165,23 @@
         }
 
         .btn-primary {
-            background-color: var(--primary);
+            background-color: var(--accent);
             color: #ffffff;
         }
 
         .btn-primary:hover {
-            background-color: #4090e0;
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background-color: rgba(88, 166, 255, 0.1);
         }
 
         .price-note {
@@ -282,25 +298,31 @@
                 </div>
 
                 <div class="buy-section">
-                    <!-- 这里改成了内测申请，不写价格，不写支付，极其真实 -->
-                    <h3 class="buy-title">JsonMorph Pro 正在内测中</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-                        支付系统与授权发码流程正在最后调试阶段。如需获取 Pro 版测试体验授权，请发送邮件联系我们。
-                    </p>
+                    <h3 class="buy-title">立即解锁 Pro 版（一次购买，终身授权）</h3>
                     <div class="btn-group">
-                        <a href="mailto:598292558@qq.com?subject=申请%20JsonMorph%20Pro%20内测授权" class="btn btn-primary">
-                            ✉️ 邮件申请内测授权
+                        <!-- 【TODO】替换为你的 Creem 支付链接，并确认 Creem 实际支持的支付方式 -->
+                        <a href="https://creem.io/pay/your-link-here" class="btn btn-primary" target="_blank"
+                            rel="noopener noreferrer">
+                            🇨🇳 支付宝 / 微信支付
+                        </a>
+
+                        <!-- 【TODO】替换为你的 Paddle 或其他海外支付链接，并确认实际支持的支付方式 -->
+                        <a href="https://your-paddle-link.com" class="btn btn-secondary" target="_blank"
+                            rel="noopener noreferrer">
+                            💳 国际信用卡 / PayPal
                         </a>
                     </div>
-                    <p class="price-note">本 License 当前适用于 VS Code 插件。正式版发布后，将在此页面开启直接购买。</p>
-
-                    <p class="free-entry">还没有安装插件？请在 VS Code 扩展市场 (Extensions) 中搜索 <strong>JsonMorph Pro</strong> 免费安装。
-                    </p>
+                    <p class="price-note">价格与税费以支付页面为准。本 License 当前适用于 VS Code 插件，购买前请确认您使用 VS Code。</p>
+                    <!-- 【TODO】替换为 VS Code Marketplace 插件页面链接 -->
+                    <p class="free-entry">还没有安装插件？<a
+                            href="https://marketplace.visualstudio.com/items?itemName=你的发布者ID.你的插件ID" target="_blank"
+                            rel="noopener noreferrer">前往 VS Code Marketplace 免费安装 →</a></p>
                 </div>
             </section>
         </main>
 
         <footer class="footer-note">
+            <p>支付成功后，系统会自动将 License Key 发送至您的邮箱。</p>
             <p>如有任何问题，请通过 <a href="mailto:598292558@qq.com">598292558@qq.com</a> 联系我们。</p>
 
             <div class="footer-links">

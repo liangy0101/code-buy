@@ -2,8 +2,8 @@
  * @Author: zhanghl
  * @Date: 2026-10-22 20:45:34
  * @LastEditors: zhanghl
- * @LastEditTime: 2026-10-22 21:55:07
- * @Description: JsonMorph Pro 官网购买页 (正式版)
+ * @LastEditTime: 2026-10-22 21:58:55
+ * @Description: JsonMorph Pro 官网购买页 (内测阶段)
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -129,6 +129,8 @@
         .buy-section {
             text-align: center;
             margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border);
         }
 
         .buy-title {
@@ -136,13 +138,6 @@
             margin-bottom: 15px;
             color: #ffffff;
             font-weight: 600;
-        }
-
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
         }
 
         .btn {
@@ -165,12 +160,12 @@
         }
 
         .btn-primary {
-            background-color: var(--accent);
+            background-color: var(--primary);
             color: #ffffff;
         }
 
         .btn-primary:hover {
-            background-color: var(--accent-hover);
+            background-color: #4090e0;
         }
 
         .price-note {
@@ -287,15 +282,17 @@
                 </div>
 
                 <div class="buy-section">
-                    <h3 class="buy-title">立即解锁 Pro 版（一次购买，终身授权）</h3>
+                    <!-- 这里改成了内测申请，不写价格，不写支付，极其真实 -->
+                    <h3 class="buy-title">JsonMorph Pro 正在内测中</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+                        支付系统与授权发码流程正在最后调试阶段。如需获取 Pro 版测试体验授权，请发送邮件联系我们。
+                    </p>
                     <div class="btn-group">
-                        <!-- 请替换为你的 Creem 真实支付链接 -->
-                        <a href="YOUR_CREEM_PAYMENT_LINK" class="btn btn-primary" target="_blank"
-                            rel="noopener noreferrer">
-                            💳 立即购买 Pro 版 (信用卡 / 支付宝等)
+                        <a href="mailto:598292558@qq.com?subject=申请%20JsonMorph%20Pro%20内测授权" class="btn btn-primary">
+                            ✉️ 邮件申请内测授权
                         </a>
                     </div>
-                    <p class="price-note">价格与税费以支付页面为准。本 License 当前适用于 VS Code 插件，购买前请确认您使用 VS Code。</p>
+                    <p class="price-note">本 License 当前适用于 VS Code 插件。正式版发布后，将在此页面开启直接购买。</p>
 
                     <p class="free-entry">还没有安装插件？请在 VS Code 扩展市场 (Extensions) 中搜索 <strong>JsonMorph Pro</strong> 免费安装。
                     </p>
@@ -304,7 +301,6 @@
         </main>
 
         <footer class="footer-note">
-            <p>支付成功后，系统会自动将 License Key 发送至您的购买邮箱。</p>
             <p>如有任何问题，请通过 <a href="mailto:598292558@qq.com">598292558@qq.com</a> 联系我们。</p>
 
             <div class="footer-links">

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsonMorph Pro - 强大的 JSON 代码转换插件</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --primary: #58a6ff;
+            --primary-hover: #3182ce;
+            --border: #30363d;
+            --accent: #238636;
+            --accent-hover: #2ea043;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        /* 头部区域 */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        /* 功能对比卡片 */
+        .pricing-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .pricing-card h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .text-center { text-align: center; }
+        .check { color: #3fb950; font-size: 1.2rem; }
+        .cross { color: #f85149; font-size: 1.2rem; }
+
+        /* 购买按钮区域 */
+        .buy-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .buy-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            min-width: 220px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background-color: rgba(88, 166, 255, 0.1);
+        }
+
+        /* 帮助说明 */
+        .footer-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+        
+        .footer-note a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2.2rem; }
+            th, td { padding: 10px; font-size: 0.9rem; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>JsonMorph Pro</h1>
+            <p>一键将 JSON 转换为 10 种强类型语言代码，解放你的双手。</p>
+        </div>
+
+        <!-- 价格卡片 -->
+        <div class="pricing-card">
+            <h2>版本功能对比</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>功能特性</th>
+                        <th class="text-center">免费版</th>
+                        <th class="text-center">Pro 版</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JSON 格式化 / 压缩 / 验证</td>
+                        <td class="text-center check">✔</td>
+                        <td class="text-center check">✔</td>
+                    </tr>
+                    <tr>
+                        <td>转换为 JavaScript / TypeScript</td>
+                        <td class="text-center check">✔</td>
+                        <td class="text-center check">✔</td>
+                    </tr>
+                    <tr>
+                        <td>转换为 Go / Java / C# / C++</td>
+                        <td class="text-center cross">✖</td>
+                        <td class="text-center check">✔</td>
+                    </tr>
+                    <tr>
+                        <td>转换为 Rust / Dart / Kotlin / Swift</td>
+                        <td class="text-center cross">✖</td>
+                        <td class="text-center check">✔</td>
+                    </tr>
+                    <tr>
+                        <td>未来所有高级语言更新</td>
+                        <td class="text-center cross">✖</td>
+                        <td class="text-center check">✔</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="buy-section">
+                <div class="buy-title">立即解锁 Pro 版（一次购买，终身授权）</div>
+                <div class="btn-group">
+                    <!-- 【TODO】替换为你的 Creem 支付链接 -->
+                    <a href="https://creem.io/pay/your-link-here" class="btn btn-primary" target="_blank">
+                        🇨🇳 支付宝 / 微信支付
+                    </a>
+                    
+                    <!-- 【TODO】替换为你的 Paddle 或其他海外支付链接 -->
+                    <a href="https://your-paddle-link.com" class="btn btn-secondary" target="_blank">
+                        💳 国际信用卡 / PayPal
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 说明与帮助 -->
+        <div class="footer-note">
+            <p>支付成功后，系统会自动将 License Key 发送至您的邮箱。</p>
+            <p>如有任何问题，请通过 <a href="mailto:support@your-domain.com">support@your-domain.com</a> 联系我们。</p>
+            <br>
+            <p>&copy; 2026 JsonMorph. All rights reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>

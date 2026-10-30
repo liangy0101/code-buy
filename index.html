@@ -2,8 +2,8 @@
  * @Author: zhanghl
  * @Date: 2026-10-22 20:45:34
  * @LastEditors: zhanghl
- * @LastEditTime: 2026-10-22 21:58:55
- * @Description: JsonMorph Pro 官网购买页 (内测阶段)
+ * @LastEditTime: 2026-10-30 11:02:25
+ * @Description: JsonMorph Pro 官网购买页 (Creem 专用版)
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -129,8 +129,6 @@
         .buy-section {
             text-align: center;
             margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px dashed var(--border);
         }
 
         .buy-title {
@@ -140,12 +138,19 @@
             font-weight: 600;
         }
 
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 24px;
-            font-size: 1rem;
+            padding: 14px 32px;
+            font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
             border-radius: 8px;
@@ -160,12 +165,14 @@
         }
 
         .btn-primary {
-            background-color: var(--primary);
+            background-color: var(--accent);
             color: #ffffff;
+            box-shadow: 0 4px 15px rgba(35, 134, 54, 0.4);
         }
 
         .btn-primary:hover {
-            background-color: #4090e0;
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
         }
 
         .price-note {
@@ -178,6 +185,37 @@
             margin-top: 18px;
             color: var(--text-muted);
             font-size: 0.95rem;
+        }
+
+        /* 授权说明面板样式 */
+        .license-policy {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(88, 166, 255, 0.05);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .license-policy h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .license-policy ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .license-policy strong {
+            color: var(--text-main);
         }
 
         .footer-note {
@@ -282,26 +320,37 @@
                 </div>
 
                 <div class="buy-section">
-                    <!-- 这里改成了内测申请，不写价格，不写支付，极其真实 -->
-                    <h3 class="buy-title">JsonMorph Pro 正在内测中</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-                        支付系统与授权发码流程正在最后调试阶段。如需获取 Pro 版测试体验授权，请发送邮件联系我们。
-                    </p>
+                    <h3 class="buy-title">立即解锁 Pro 版（一次购买，终身授权）</h3>
                     <div class="btn-group">
-                        <a href="mailto:598292558@qq.com?subject=申请%20JsonMorph%20Pro%20内测授权" class="btn btn-primary">
-                            ✉️ 邮件申请内测授权
+                        <!-- 替换为你的 Creem 支付链接 -->
+                        <a href="https://www.creem.io/payment/prod_3uGzqHdwRAKxMO6dP9GKq9" class="btn btn-primary"
+                            target="_blank" rel="noopener noreferrer">
+                            🚀 立即购买 (支持支付宝/微信/信用卡)
                         </a>
                     </div>
-                    <p class="price-note">本 License 当前适用于 VS Code 插件。正式版发布后，将在此页面开启直接购买。</p>
+                    <p class="price-note">安全支付由 Creem 提供。价格与税费以支付页面为准。</p>
 
-                    <p class="free-entry">还没有安装插件？请在 VS Code 扩展市场 (Extensions) 中搜索 <strong>JsonMorph Pro</strong> 免费安装。
-                    </p>
+                    <!-- 授权说明（防客诉核武器） -->
+                    <div class="license-policy">
+                        <h4>📌 授权政策说明</h4>
+                        <ul>
+                            <li><strong>买断制授权：</strong>一次购买，永久使用，免费获取后续所有新增语言支持。</li>
+                            <li><strong>设备绑定限制：</strong>每个 License Key <strong>最多同时绑定 2 台设备</strong>（如办公电脑+个人电脑）。</li>
+                            <li><strong>支持更换电脑：</strong>如需换机，请在旧设备上执行 <code>JsonMorph: Deactivate License</code>
+                                解绑以释放名额。为防滥用，<strong>每年最多解绑 3 次</strong>。</li>
+                            <li><strong>发卡方式：</strong>支付成功后，系统将自动把 License Key 发送至您填写的邮箱。</li>
+                        </ul>
+                    </div>
+
+                    <p class="free-entry">还没有安装插件？<a
+                            href="https://marketplace.visualstudio.com/items?itemName=liangy.liangy-jsonmorph"
+                            target="_blank" rel="noopener noreferrer">前往 VS Code Marketplace 免费安装 →</a></p>
                 </div>
             </section>
         </main>
 
         <footer class="footer-note">
-            <p>如有任何问题，请通过 <a href="mailto:598292558@qq.com">598292558@qq.com</a> 联系我们。</p>
+            <p>支付遇到问题？请联系客服：<a href="mailto:598292558@qq.com">598292558@qq.com</a></p>
 
             <div class="footer-links">
                 <a href="privacy.html">隐私政策 (Privacy Policy)</a> |
